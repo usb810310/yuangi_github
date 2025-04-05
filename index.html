@@ -3,85 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>元氣羅東店 | Flex 功能體驗版</title>
+  <title>元氣早午餐 ｜ 功能展示</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .feature-buttons {
+    .carousel {
+      max-width: 800px;
+      margin: 30px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .slides {
       display: flex;
-      flex-wrap: wrap;
+      width: 800%;
+      animation: slide 24s infinite;
+    }
+    .slides img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    @keyframes slide {
+      0% {margin-left: 0%;}
+      12.5% {margin-left: 0%;}
+      25% {margin-left: -100%;}
+      37.5% {margin-left: -100%;}
+      50% {margin-left: -200%;}
+      62.5% {margin-left: -200%;}
+      75% {margin-left: -300%;}
+      87.5% {margin-left: -300%;}
+      100% {margin-left: 0%;}
+    }
+    .button-area {
+      display: flex;
       justify-content: center;
       gap: 16px;
-      margin: 40px auto;
-      max-width: 800px;
+      margin: 40px 0;
     }
-    .feature-button {
-      flex: 1 1 calc(50% - 32px);
-      background: #ffe082;
-      border-radius: 12px;
-      text-align: center;
-      padding: 16px;
-      font-weight: bold;
-      font-size: 18px;
-      color: #6d4c41;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    .button-area a {
+      background: #4CAF50;
+      padding: 14px 20px;
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
     }
-    .feature-button:hover {
-      background: #ffca28;
-      transform: scale(1.03);
+    .button-area a.linepay {
+      background: #00C300;
     }
-    .store-info {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-    .store-info h3, .store-info h4, .store-info h5 {
-      margin: 4px 0;
-    }
-    @media (max-width: 500px) {
-      .feature-button {
-        flex: 1 1 100%;
-      }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
+
   <header class="site-header">
-    <h1>元氣早午餐 羅東店</h1>
-    <p>模擬 Flex Message 功能互動體驗</p>
+    <h1>元氣羅東店</h1>
+    <p>特色餐點展示 ＋ LINE Pay ＋ 圖片輪播</p>
   </header>
 
-  <main class="promo-card">
-    <img src="images/promo.jpg" alt="酥炸魚排鮮蔬捲蛋" class="promo-img" />
-    <section class="promo-info">
-      <h2>Special 當月套餐優惠組合</h2>
-      <p class="desc">套餐內容：酥炸魚排鮮蔬捲蛋＋錫蘭奶茶（M）</p>
-      <div class="price-tag">活動價 NT$95 / 份</div>
-    </section>
-  </main>
+  <div class="carousel">
+    <div class="slides">
+      <img src="images/banner1.jpg" alt="banner1">
+      <img src="images/banner2.jpg" alt="banner2">
+      <img src="images/banner3.jpg" alt="banner3">
+      <img src="images/banner4.jpg" alt="banner4">
+      <img src="images/banner5.jpg" alt="banner5">
+      <img src="images/banner6.jpg" alt="banner6">
+      <img src="images/banner7.jpg" alt="banner7">
+      <img src="images/banner8.jpg" alt="banner8">
+    </div>
+  </div>
 
-  <section class="feature-buttons">
-    <a href="https://line.me/R/oaMessage/@909ptxez/" class="feature-button" target="_blank">💬 我要聯絡店家</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7UmZ6t7FLEX_EXAMPLE/viewform" class="feature-button" target="_blank">⚠️ 回報餐點遺漏</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScookNotify_EXAMPLE/viewform" class="feature-button" target="_blank">🔔 製餐完成通知我</a>
-    <a href="#store-info" class="feature-button">🏠 查看分店資訊</a>
-  </section>
+  <div class="button-area">
+    <a class="linepay" href="https://qrcodepay.line.me/qr/payment/mpGeY7qE1VU4D%252BcgaSQzc743b3sWSqbfpyY%252FUy3hKzwwGE05Tz7IAbOwNY4%252Fksdb" target="_blank">
+      使用 LINE Pay 付款
+    </a>
+    <a href="tel:032605085">電話聯繫門市</a>
+  </div>
 
-  <section id="store-info" class="store-info">
-    <h3>營業時間：06:30 AM ~ 01:00 PM</h3>
-    <h4>門市地址：宜蘭縣羅東鎮成功街182號</h4>
-    <h4>門市電話：<a href="tel:032605085">03-2605085</a></h4>
-    <h5>統一編號：91142817</h5>
-    <h5>營業登記：旭凱早午餐</h5>
-  </section>
-
-  <footer class="footer">
-    <p>元氣早午餐 Yuangi Brunch | 粉絲團: facebook.com/yuangi</p>
+  <footer>
+    元氣早午餐 Yuangi Brunch ｜ www.yuangi.com.tw
   </footer>
+
 </body>
 </html>
