@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>元氣早午餐 | 多功能展示體驗</title>
+  <title>元氣羅東店 | Flex 功能體驗版</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .feature-buttons {
@@ -25,10 +25,23 @@
       color: #6d4c41;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: 0.3s;
+      text-decoration: none;
     }
     .feature-button:hover {
       background: #ffca28;
       transform: scale(1.03);
+    }
+    .store-info {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .store-info h3, .store-info h4, .store-info h5 {
+      margin: 4px 0;
     }
     @media (max-width: 500px) {
       .feature-button {
@@ -39,33 +52,32 @@
 </head>
 <body>
   <header class="site-header">
-    <h1>元氣早午餐</h1>
-    <p>2025 夏季限定｜多功能展示體驗</p>
+    <h1>元氣早午餐 羅東店</h1>
+    <p>模擬 Flex Message 功能互動體驗</p>
   </header>
 
   <main class="promo-card">
     <img src="images/promo.jpg" alt="酥炸魚排鮮蔬捲蛋" class="promo-img" />
     <section class="promo-info">
       <h2>Special 當月套餐優惠組合</h2>
-      <p class="date">優惠期間：2025/4/1 ~ 6/30</p>
       <p class="desc">套餐內容：酥炸魚排鮮蔬捲蛋＋錫蘭奶茶（M）</p>
-      <p class="detail">
-        炸的香酥的魚排，選用特級虱目魚專製而成，佐以獨家秘製醬料，酸甜爽口，搭配新鮮生菜與膨嫩煎蛋，層次豐富、回味無窮。
-      </p>
       <div class="price-tag">活動價 NT$95 / 份</div>
     </section>
   </main>
 
-  <section class="menu-section">
-    <h2 style="text-align:center; color:#444; margin-top: 40px;">完整菜單 Menu</h2>
-    <img src="images/menu.jpg" alt="完整菜單" class="promo-img" style="max-width:100%; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 20px;" />
+  <section class="feature-buttons">
+    <a href="https://line.me/R/oaMessage/@909ptxez/" class="feature-button" target="_blank">💬 我要聯絡店家</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7UmZ6t7FLEX_EXAMPLE/viewform" class="feature-button" target="_blank">⚠️ 回報餐點遺漏</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScookNotify_EXAMPLE/viewform" class="feature-button" target="_blank">🔔 製餐完成通知我</a>
+    <a href="#store-info" class="feature-button">🏠 查看分店資訊</a>
   </section>
 
-  <section class="feature-buttons">
-    <div class="feature-button">我要聯絡店家</div>
-    <div class="feature-button">回報餐點遺漏</div>
-    <div class="feature-button">製餐完成通知我</div>
-    <div class="feature-button">其他分店資訊</div>
+  <section id="store-info" class="store-info">
+    <h3>營業時間：06:30 AM ~ 01:00 PM</h3>
+    <h4>門市地址：宜蘭縣羅東鎮成功街182號</h4>
+    <h4>門市電話：<a href="tel:032605085">03-2605085</a></h4>
+    <h5>統一編號：91142817</h5>
+    <h5>營業登記：旭凱早午餐</h5>
   </section>
 
   <footer class="footer">
