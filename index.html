@@ -3,13 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>元氣早午餐 | 當月優惠</title>
+  <title>元氣早午餐 | 多功能展示體驗</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .feature-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    .feature-button {
+      flex: 1 1 calc(50% - 32px);
+      background: #ffe082;
+      border-radius: 12px;
+      text-align: center;
+      padding: 16px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #6d4c41;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .feature-button:hover {
+      background: #ffca28;
+      transform: scale(1.03);
+    }
+    @media (max-width: 500px) {
+      .feature-button {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <h1>元氣早午餐</h1>
-    <p>2025 夏季限定｜酥炸魚排鮮蔬捲蛋套餐</p>
+    <p>2025 夏季限定｜多功能展示體驗</p>
   </header>
 
   <main class="promo-card">
@@ -28,6 +59,13 @@
   <section class="menu-section">
     <h2 style="text-align:center; color:#444; margin-top: 40px;">完整菜單 Menu</h2>
     <img src="images/menu.jpg" alt="完整菜單" class="promo-img" style="max-width:100%; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 20px;" />
+  </section>
+
+  <section class="feature-buttons">
+    <div class="feature-button">我要聯絡店家</div>
+    <div class="feature-button">回報餐點遺漏</div>
+    <div class="feature-button">製餐完成通知我</div>
+    <div class="feature-button">其他分店資訊</div>
   </section>
 
   <footer class="footer">
