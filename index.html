@@ -1,93 +1,211 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>元氣早午餐 ｜ 功能展示</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>元氣早午餐 Genki Brunch</title>
   <style>
-    .carousel {
-      max-width: 800px;
-      margin: 30px auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
+    html {
+      scroll-behavior: smooth;
     }
-    .slides {
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: #fffef7;
+      color: #333;
+    }
+    header {
+      background: #ffcc33;
+      padding: 1rem 2rem;
       display: flex;
-      width: 800%;
-      animation: slide 24s infinite;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .slides img {
-      width: 100%;
-      border-radius: 12px;
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0;
     }
-    @keyframes slide {
-      0% {margin-left: 0%;}
-      12.5% {margin-left: 0%;}
-      25% {margin-left: -100%;}
-      37.5% {margin-left: -100%;}
-      50% {margin-left: -200%;}
-      62.5% {margin-left: -200%;}
-      75% {margin-left: -300%;}
-      87.5% {margin-left: -300%;}
-      100% {margin-left: 0%;}
-    }
-    .button-area {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin: 40px 0;
-    }
-    .button-area a {
-      background: #4CAF50;
-      padding: 14px 20px;
-      color: white;
+    nav a {
+      margin-left: 1rem;
       text-decoration: none;
-      border-radius: 8px;
+      color: #333;
       font-weight: bold;
+      font-size: 0.95rem;
     }
-    .button-area a.linepay {
-      background: #00C300;
+    .hero {
+      background-image: url("https://raw.githubusercontent.com/user/repo/main/store.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      font-size: 2.2rem;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    #about { background: #fff9e3; }
+    #order { background: #fff; }
+    #contact { background: #fff6e0; }
+    #qa { background: #fffef2; }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      background: #ff9933;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .line-float {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 1000;
     }
     footer {
+      background: #eee;
       text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-      color: #888;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+    }
+    img.logo {
+      width: 150px;
+      margin-top: 1rem;
+    }
+
+    /* 切換按鈕區塊樣式 */
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+    .tab-buttons button {
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      padding: 0.6rem 1.2rem;
+      margin: 0.4rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .tab-buttons button.active {
+      background: #ffcc33;
+      border-color: #ff9900;
+      color: #000;
+    }
+    .tab-content {
+      display: none;
+      padding-top: 1rem;
+    }
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <h1>元氣羅東店</h1>
-    <p>特色餐點展示 ＋ LINE Pay ＋ 圖片輪播</p>
+  <header>
+    <h1>元氣早午餐</h1>
+    <nav>
+      <a href="#about">關於我們</a>
+      <a href="#order">線上點餐</a>
+      <a href="#qa">常見問題</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
   </header>
 
-  <div class="carousel">
-    <div class="slides">
-      <img src="images/banner1.jpg" alt="banner1">
-      <img src="images/banner2.jpg" alt="banner2">
-      <img src="images/banner3.jpg" alt="banner3">
-      <img src="images/banner4.jpg" alt="banner4">
-      <img src="images/banner5.jpg" alt="banner5">
-      <img src="images/banner6.jpg" alt="banner6">
-      <img src="images/banner7.jpg" alt="banner7">
-      <img src="images/banner8.jpg" alt="banner8">
-    </div>
+  <div class="hero">
+    早安元氣，美味開啟！
   </div>
 
-  <div class="button-area">
-    <a class="linepay" href="https://qrcodepay.line.me/qr/payment/mpGeY7qE1VU4D%252BcgaSQzc743b3sWSqbfpyY%252FUy3hKzwwGE05Tz7IAbOwNY4%252Fksdb" target="_blank">
-      使用 LINE Pay 付款
+  <section id="about">
+    <h2>關於我們</h2>
+    <p>我們是「元氣早午餐」，致力於提供最溫暖、健康的每日早午餐，讓每個清晨都充滿能量與微笑！</p>
+    <img src="https://raw.githubusercontent.com/user/repo/main/logo.jpg" alt="元氣早午餐 Logo" class="logo"/>
+  </section>
+
+  <section id="order">
+    <h2>線上點餐</h2>
+    <p>不想排隊嗎？歡迎點選下方按鈕立即線上訂購我們的美味早午餐！</p>
+    <a class="btn" href="#" target="_blank">立即點餐（敬請期待）</a>
+  </section>
+
+  <section id="qa">
+    <h2>常見問題與說明</h2>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="switchTab('faq')">訂購方式</button>
+      <button class="tab-btn" onclick="switchTab('menu')">餐點說明</button>
+      <button class="tab-btn" onclick="switchTab('notice')">最新公告</button>
+    </div>
+
+    <div id="faq" class="tab-content active">
+      <h3>如何訂購元氣早午餐？</h3>
+      <p>步驟一：點擊「線上點餐」按鈕<br>步驟二：選擇想要的餐點與時間<br>步驟三：完成付款或到店付款，即可取餐！</p>
+    </div>
+    <div id="menu" class="tab-content">
+      <h3>我們的餐點有什麼特色？</h3>
+      <p>每份早午餐皆現點現做，主打自家製漢堡排、嫩煎蛋捲與手作三明治，還有濃郁豆漿與元氣紅茶！</p>
+    </div>
+    <div id="notice" class="tab-content">
+      <h3>近期公告</h3>
+      <p>清明連假期間 4/4～4/6 門市照常營業。<br>新品「黃金起司蛋堡」熱賣中，快來嚐鮮！</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>聯絡我們</h2>
+    <p>歡迎透過 LINE 聯繫我們：</p>
+    <a href="https://lin.ee/PBSAPsK" target="_blank">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="36" border="0">
     </a>
-    <a href="tel:032605085">電話聯繫門市</a>
-  </div>
+    <br><br>
+    <a class="btn" href="https://lin.ee/o7JgBwY" target="_blank">LINE 通話聯絡</a>
+  </section>
 
   <footer>
-    元氣早午餐 Yuangi Brunch ｜ www.yuangi.com.tw
+    &copy; 2025 元氣早午餐 Genki Brunch. 保留所有權利。
   </footer>
+
+  <div class="line-float">
+    <a href="https://line.me/R/ti/p/@909ptxez" target="_blank">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="LINE聯絡" height="48">
+    </a>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
